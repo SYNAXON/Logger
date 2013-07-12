@@ -53,6 +53,7 @@
                               %priority%<br/>
                               %store_code%<br/>
                               %time_elapsed%<br/>
+                              %HOSTNAME%<br/>
                               %REQUEST_METHOD%<br/>
                               %REQUEST_URI%<br/>
                               %REQUEST_DATA%<br/>

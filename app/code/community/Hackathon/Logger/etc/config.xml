@@ -5,6 +5,18 @@
             <version>0.0.2</version>
         </Hackathon_Logger>
     </modules>
+    <crontab>
+        <jobs>
+            <clean_logs>
+                <schedule>
+                    <cron_expr>15 0 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>hackathon_logger/observer::clean_logs</model>
+                </run>
+            </clean_logs>
+        </jobs>
+    </crontab>
     <admin>
         <routers>
             <adminhtml>
@@ -61,13 +73,34 @@
             <core>
                 <writer_model>Hackathon_Logger_Model_Queue</writer_model>
                 <writer_models>
-                    <default><label>Files (Magento Default)</label><class>Zend_Log_Writer_Stream</class></default>
-                    <advanced><label>Files (Advanced Format)</label><class>Hackathon_Logger_Model_Stream</class></advanced>
-                    <mailconfig><label>Mail</label><class>Hackathon_Logger_Model_Mail</class></mailconfig>
-                    <db><label>Database</label><class>Hackathon_Logger_Model_Db</class></db>
-                    <xmpp><label>XMPP</label><class>Hackathon_Logger_Model_Xmpp</class></xmpp>
-                    <dropbox><label>Dropbox</label><class>Hackathon_Logger_Model_Dropbox</class></dropbox>
-                    <graylog2><label>Graylog2</label><class>Hackathon_Logger_Model_Graylog2</class></graylog2>
+                    <default>
+                        <label>Files (Magento Default)</label>
+                        <class>Zend_Log_Writer_Stream</class>
+                    </default>
+                    <advanced>
+                        <label>Files (Advanced Format)</label>
+                        <class>Hackathon_Logger_Model_Stream</class>
+                    </advanced>
+                    <mailconfig>
+                        <label>Mail</label>
+                        <class>Hackathon_Logger_Model_Mail</class>
+                    </mailconfig>
+                    <db>
+                        <label>Database</label>
+                        <class>Hackathon_Logger_Model_Db</class>
+                    </db>
+                    <xmpp>
+                        <label>XMPP</label>
+                        <class>Hackathon_Logger_Model_Xmpp</class>
+                    </xmpp>
+                    <dropbox>
+                        <label>Dropbox</label>
+                        <class>Hackathon_Logger_Model_Dropbox</class>
+                    </dropbox>
+                    <graylog2>
+                        <label>Graylog2</label>
+                        <class>Hackathon_Logger_Model_Graylog2</class>
+                    </graylog2>
                 </writer_models>
             </core>
         </log>
